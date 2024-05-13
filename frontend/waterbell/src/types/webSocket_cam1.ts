@@ -16,7 +16,7 @@ function connectWebSocket(): void {
     socket = new WebSocket(
       `${process.env.VUE_APP_WSAPI}/cam?facilityId=${facilityId.value}&camNum=1`
     )
-    console.log('cam1 웹소켓과 연결이 되었습니다.')
+    // console.log('cam1 웹소켓과 연결이 되었습니다.')
   }
   // socket.onopen = function () {
   //   socket?.send(`token:${jwtToken.value}`)
@@ -42,9 +42,9 @@ function connectWebSocket(): void {
     // 알림이 도착하면 알림 아이콘을 표시합니다.
 
     socket.onclose = function () {
-      console.log(
-        'cam1 WebSocket 연결이 종료되었습니다. 1초 후 재연결을 시도합니다.'
-      )
+      // console.log(
+      //   'cam1 WebSocket 연결이 종료되었습니다. 1초 후 재연결을 시도합니다.'
+      // )
       const imgTag = document.getElementById('cctv1') as HTMLImageElement
 
       try {
