@@ -3,6 +3,8 @@ import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
 let socket = null
 const store = useStore()
+
+
 export function connectWebSocket(websocket) {
   const logState = computed(() => store.getters.logState).value
   let jwtToken = ref(null)
@@ -15,6 +17,8 @@ export function connectWebSocket(websocket) {
   }
   // WebSocket 연결
   socket = new WebSocket(`${process.env.VUE_APP_WSAPI}/ws`)
+
+
   socket.onopen = function () {
     socket?.send(`token:${jwtToken.value}`)
   }

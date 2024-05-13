@@ -32,12 +32,12 @@ export default defineComponent({
   name: 'parkDashCctvVue',
   setup() {
     onMounted(() => {
-      webSocket1.connectWebSocket()
-      webSocket2.connectWebSocket()
+      // webSocket1.connectWebSocket()
+      // webSocket2.connectWebSocket()
     })
     onBeforeUnmount(() => {
-      webSocket1.closeWebSocket()
-      webSocket2.closeWebSocket()
+      // webSocket1.closeWebSocket()
+      // webSocket2.closeWebSocket()
     })
   }
 })

@@ -10,7 +10,6 @@ import '@vuepic/vue-datepicker/dist/main.css'
 import { fetchUnderroads } from './types/getUnderroadList'
 // Use plugin with optional defaults
 import FontAwesomeIcon from './util/fontawesome-icons'
-
 import getMylocation, { getClosestLocation } from './types/getMylocation'
 
 // 날짜 포맷
@@ -23,7 +22,9 @@ import getMylocation, { getClosestLocation } from './types/getMylocation'
 
 // import Geolocation from 'vue-geolocation-api'
 
-// axios.defaults.baseURL = 'http://localhost:8080'
+
+
+axios.defaults.baseURL = 'http://localhost:8080'
 
 const app = createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)

@@ -32,7 +32,7 @@ function connectWebSocket(): void {
         //이미지 처리 어떻게 할거야
         store.dispatch('auth/setCctvImg2', base64Image)
         const imgString = computed(() => store.getters['auth/cctvImg2'])
-        console.log('imgString 들어오나요?')
+        // console.log('imgString 들어오나요?')
         console.log(imgString)
         // 이미지를 화면에 표시할 요소 생성
         const imgTag = document.getElementById('cctv2') as HTMLImageElement
@@ -43,9 +43,9 @@ function connectWebSocket(): void {
     // 알림이 도착하면 알림 아이콘을 표시합니다.
 
     socket.onclose = function () {
-      console.log(
-        'cam2 WebSocket 연결이 종료되었습니다. 1초 후 재연결을 시도합니다.'
-      )
+      // console.log(
+      //   'cam2 WebSocket 연결이 종료되었습니다. 1초 후 재연결을 시도합니다.'
+      // )
       const imgTag = document.getElementById('cctv2') as HTMLImageElement
 
       try {

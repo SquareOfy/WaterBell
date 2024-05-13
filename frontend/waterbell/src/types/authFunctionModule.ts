@@ -24,33 +24,33 @@ export async function memberLogin(loginId: string, password: string) {
     const accessToken = member.accessToken
     const refreshToken = member.refreshToken
     console.log(member.role)
-    switch (member.role) {
-      case 'APART_MANAGER':
-      case 'PUBLIC_MANAGER': {
-        // user = {
-        //   id: member.id,
-        //   loginId: member.loginId,
-        //   role: member.role,
-        //   phone: member.phone,
-        //   facilityId: member.facilityId
-        // }
-        const error = new Error(`NOT_MEMBER`)
-        // alert(error.message)
-        throw error
-      }
-      case 'APART_MEMBER':
-        user = {
-          id: member.id,
-          loginId: member.loginId,
-          role: member.role,
-          phone: member.phone,
-          facilityId: member.facilityId,
-          name: member.name,
-          addressNumber: member.addressNumber
-        }
-        store.commit('auth/setFacilityId', member.facilityId)
-        break
-    }
+    // switch (member.role) {
+    //   case 'APART_MANAGER':
+    //   case 'PUBLIC_MANAGER': {
+    //     user = {
+    //       id: member.id,
+    //       loginId: member.loginId,
+    //       role: member.role,
+    //       phone: member.phone,
+    //       facilityId: member.facilityId
+    //     }
+    //     const error = new Error(`NOT_MEMBER`)
+    //     // alert(error.message)
+    //     throw error
+    //   }
+    //   case 'APART_MEMBER':
+    //     user = {
+    //       id: member.id,
+    //       loginId: member.loginId,
+    //       role: member.role,
+    //       phone: member.phone,
+    //       facilityId: member.facilityId,
+    //       name: member.name,
+    //       addressNumber: member.addressNumber
+    //     }
+    //     store.commit('auth/setFacilityId', member.facilityId)
+    //     break
+    // }
     //웹소켓 연결
     // 여기서 user 객체를 store에 저장하거나 다른 처리를 할 수 있습니다.
     await store.commit('auth/setTokens', { accessToken, refreshToken })
